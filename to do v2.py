@@ -21,3 +21,34 @@ while True:
         })
 
         print("Task added successfully!")
+
+    elif choice == "2":
+        if len(tasks) == 0:
+            print("No tasks found.")
+
+        else:
+            print("\nYour Tasks:")
+
+            for i, task in enumerate(tasks, start=1):
+                status = "✓" if task["done"] else "✗"
+                print(f"{i}. {task['task']} {status}")
+
+    # Complete Task
+    elif choice == "3":
+        if len(tasks) == 0:
+            print("No tasks available.")
+
+        else:
+            print("\nYour Tasks:")
+
+            for i, task in enumerate(tasks, start=1):
+                status = "✓" if task["done"] else "✗"
+                print(f"{i}. {task['task']} {status}")
+
+            task_num = int(input("Enter task number to complete: "))
+
+            if 1 <= task_num <= len(tasks):
+                tasks[task_num - 1]["done"] = True
+                print("Task completed!")
+            else:
+                print("Invalid task number.")
