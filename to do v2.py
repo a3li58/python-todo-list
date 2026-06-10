@@ -52,3 +52,25 @@ while True:
                 print("Task completed!")
             else:
                 print("Invalid task number.")
+    # Delete Task
+    elif choice == "4":
+        if len(tasks) == 0:
+            print("No tasks to delete.")
+
+        else:
+            print("\nYour Tasks:")
+
+            for i, task in enumerate(tasks, start=1):
+                status = "✓" if task["done"] else "✗"
+                print(f"{i}. {task['task']} {status}")
+
+            task_num = int(input("Enter task number to delete: "))
+
+            if 1 <= task_num <= len(tasks):
+                deleted_task = tasks.pop(task_num - 1)
+                print(f"{deleted_task['task']} deleted.")
+            else:
+                print("Invalid task number.")
+
+
+
