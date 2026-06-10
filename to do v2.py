@@ -72,5 +72,12 @@ while True:
             else:
                 print("Invalid task number.")
 
+    # Exit
+    elif choice == "5":
+        print("Goodbye!")
+        break
+
+    else:
+        print("Invalid choice. Please try again.")   
 
 
