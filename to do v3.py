@@ -15,3 +15,10 @@ def save_tasks():
         json.dump(tasks, file)
 
 
+while True:
+    choice = easygui.buttonbox(
+        "Choose an option",
+        "To Do List",
+        ["Add Task", "View Tasks", "Complete Task", "Delete Task", "Exit"]
+    )
+
