@@ -21,4 +21,17 @@ while True:
         "To Do List",
         ["Add Task", "View Tasks", "Complete Task", "Delete Task", "Exit"]
     )
+    if choice == "Add Task":
+        task_name = easygui.enterbox("Enter task name:")
+        if task_name:
+            task_time = easygui.enterbox("Enter task time:")
+
+            tasks.append({
+                "task": task_name,
+                "time": task_time,
+                "done": False
+            })
+
+            save_tasks()
+            easygui.msgbox("Task added successfully!")
 
